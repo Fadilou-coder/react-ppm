@@ -45,6 +45,7 @@ export const ListVisite=(props)=>{
             console.log(response);
             listVisite().then((response)=>{
                 allVisite(response.data.content);
+                console.log(response.data.content);
             }).catch((e)=>{
                 console.log(e);
             })
@@ -77,7 +78,7 @@ export const ListVisite=(props)=>{
                         <td> {el.visiteur.cni} </td>
                         <td> {el.visiteur.prenom} </td>
                         <td> {el.visiteur.nom} </td>
-                        <td> {el.typeVisite.libelle} </td>
+                        {/* <td> {el.typeVisite.libelle} </td> */}
                         <td> {el.dateEntree} </td>
                         <td> {el.dateSortie} </td>
                         <td>
