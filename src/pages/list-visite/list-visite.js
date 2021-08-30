@@ -18,6 +18,7 @@ export const ListVisite=(props)=>{
 
         listVisite().then((response)=>{
             allVisite(response.data.content);
+            console.log(response.data.content);
         }).catch((e)=>{
             console.log(e);
         })
@@ -45,7 +46,6 @@ export const ListVisite=(props)=>{
             console.log(response);
             listVisite().then((response)=>{
                 allVisite(response.data.content);
-                console.log(response.data.content);
             }).catch((e)=>{
                 console.log(e);
             })
