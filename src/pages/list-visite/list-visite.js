@@ -78,7 +78,9 @@ export const ListVisite=(props)=>{
                         <td> {el.visiteur.cni} </td>
                         <td> {el.visiteur.prenom} </td>
                         <td> {el.visiteur.nom} </td>
-                        {/* <td> {el.typeVisite.libelle} </td> */}
+                        {el.typeVisite &&
+                         <td> {el.typeVisite.libelle} </td> 
+                         }
                         <td> {el.dateEntree} </td>
                         <td> {el.dateSortie} </td>
                         <td>
