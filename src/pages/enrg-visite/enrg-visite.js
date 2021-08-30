@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
-import {fetchEmp, fetchTypeVisite, fetchFormations, fetchStage, creerVisite, fetchVisiteurByCni} from '../../api/apiService';
+import {fetchEmp, fetchTypeVisite, fetchFormations, fetchStage, creerVisite, fetchVisiteurByCni, listUsers} from '../../api/apiService';
 import {Spinner} from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
@@ -59,6 +59,12 @@ export const EnrgVisite=(props)=>{
 
         fetchFormations().then((response)=>{
             setForm(response.data);
+        }).catch((e)=>{
+            console.log(e);
+        })
+
+        listUsers().then((response)=>{
+            console.log(response);
         }).catch((e)=>{
             console.log(e);
         })

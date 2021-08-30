@@ -13,6 +13,8 @@ const LoginPage=({loading,error,...props})=>{
         password: ''
         });
 
+    
+
     const handleSubmit=(evt)=>{
         evt.preventDefault();
         props.authenticate();
@@ -30,6 +32,8 @@ const LoginPage=({loading,error,...props})=>{
 
 
         }).catch((err)=>{
+
+            console.log(err);
 
             if(err && err.response){
             

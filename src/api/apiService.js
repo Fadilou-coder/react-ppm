@@ -12,7 +12,7 @@ const getCni=()=>{
 export const userLogin=(authRequest)=>{
     return axios({
         'method':'POST',
-        'url':`${process.env.hostUrl||'http://localhost:8080'}/login`,
+        'url':'https://spring-ppm.herokuapp.com/login',
         'data':authRequest
     })
 }
@@ -20,7 +20,7 @@ export const userLogin=(authRequest)=>{
 export const fetchUserData=(authRequest)=>{
     return axios({
         method:'GET',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/visites`,
+        url:'https://spring-ppm.herokuapp.com/visites',
         headers:{
             'Authorization':'Bearer '+getToken()
         }
@@ -30,7 +30,7 @@ export const fetchUserData=(authRequest)=>{
 export const fetchEmp=(authRequest)=>{
     return axios({
         method:'GET',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/employe`,
+        url:'https://spring-ppm.herokuapp.com/employe',
         headers:{
             'Authorization':'Bearer '+getToken()
         }
@@ -40,7 +40,7 @@ export const fetchEmp=(authRequest)=>{
 export const fetchVisiteurs=(authRequest)=>{
     return axios({
         method:'GET',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/visiteurs`,
+        url:'https://spring-ppm.herokuapp.com/visiteurs',
         headers:{
             'Authorization':'Bearer '+getToken()
         }
@@ -50,7 +50,7 @@ export const fetchVisiteurs=(authRequest)=>{
 export const fetchTypeVisite=(authRequest)=>{
     return axios({
         method:'GET',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/typeVisites`,
+        url:'https://spring-ppm.herokuapp.com/typeVisites',
         headers:{
             'Authorization':'Bearer '+getToken()
         }
@@ -60,7 +60,7 @@ export const fetchTypeVisite=(authRequest)=>{
 export const fetchFormations=(authRequest)=>{
     return axios({
         method:'GET',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/formations`,
+        url:'https://spring-ppm.herokuapp.com/formations',
         headers:{
             'Authorization':'Bearer '+getToken()
         }
@@ -70,7 +70,7 @@ export const fetchFormations=(authRequest)=>{
 export const fetchStage=(authRequest)=>{
     return axios({
         method:'GET',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/stages`,
+        url:'https://spring-ppm.herokuapp.com/stages',
         headers:{
             'Authorization':'Bearer '+getToken()
         }
@@ -80,7 +80,7 @@ export const fetchStage=(authRequest)=>{
 export const fetchVisiteurByCni=(cni)=>{
     return axios({
         method:'GET',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/visiteurs/`+cni,
+        url:'https://spring-ppm.herokuapp.com/visiteurs/'+cni,
         headers:{
             'Authorization':'Bearer '+getToken()
         }
@@ -90,7 +90,7 @@ export const fetchVisiteurByCni=(cni)=>{
 export const creerVisite=(authRequest)=>{
     return axios({
         'method':'POST',
-        'url':`${process.env.hostUrl||'http://localhost:8080'}/visite`,
+        'url':'https://spring-ppm.herokuapp.com/visite',
         'data':authRequest,
         headers:{
             'Authorization':'Bearer '+getToken(),
@@ -103,7 +103,7 @@ export const creerVisite=(authRequest)=>{
 export const listVisite=()=>{
     return axios({
         method:'GET',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/visites`,
+        url:'https://spring-ppm.herokuapp.com/visites',
         headers:{
             'Authorization':'Bearer '+getToken()
         }
@@ -113,7 +113,7 @@ export const listVisite=()=>{
 export const listVisiteur=()=>{
     return axios({
         method:'GET',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/visiteurs`,
+        url:'https://spring-ppm.herokuapp.com/visiteurs',
         headers:{
             'Authorization':'Bearer '+getToken()
         }
@@ -123,7 +123,7 @@ export const listVisiteur=()=>{
 export const sortir=(id)=>{
     return axios({
         method:'PUT',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/visite/`+id,
+        url:'https://spring-ppm.herokuapp.com/visite/'+id,
         headers:{
             'Authorization':'Bearer '+getToken()
         }
@@ -133,7 +133,18 @@ export const sortir=(id)=>{
 export const listVisitesByVisiteur=()=>{
     return axios({
         method:'GET',
-        url:`${process.env.hostUrl||'http://localhost:8080'}/visiteur/`+getCni()+`/visites`,
+        url:'https://spring-ppm.herokuapp.com/visiteur/'+getCni()+'/visites',
+        headers:{
+            'Authorization':'Bearer '+getToken()
+        }
+    })  
+}
+
+
+export const listUsers=()=>{
+    return axios({
+        method:'GET',
+        url:'https://spring-ppm.herokuapp.com/appUsers/',
         headers:{
             'Authorization':'Bearer '+getToken()
         }
