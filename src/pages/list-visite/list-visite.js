@@ -81,6 +81,9 @@ export const ListVisite=(props)=>{
                         {el.typeVisite &&
                          <td> {el.typeVisite.libelle} </td> 
                          }
+                         {el.typeVisite==null &&
+                         <td> Visite </td> 
+                         }
                         <td> {el.dateEntree} </td>
                         <td> {el.dateSortie} </td>
                         <td>
